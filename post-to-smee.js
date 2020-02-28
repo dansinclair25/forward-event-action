@@ -5,16 +5,7 @@ const fetch = require('node-fetch')
 module.exports = async function postToSmee () {
   // Serialize payload object
   const payload = {
-    ...context.payload,
-    'smee-action': {
-      action: context.action,
-      actor: context.actor,
-      event: process.env.GITHUB_EVENT_NAME,
-      sha: context.sha,
-      ref: context.ref,
-      workflow: context.workflow,
-      run_id: process.env.GITHUB_RUN_ID
-    }
+    ...context.payload
   }
 
   // Serialize headers
@@ -24,15 +15,15 @@ module.exports = async function postToSmee () {
     'X-GitHub-Delivery': process.env.GITHUB_RUN_ID
   }
   // Get the channel id
-  const channel = (
-    // Use the provided `channel` input
-    core.getInput('channel') ||
-    // Default to `owner-repo`
-    `${context.repo.owner}-${context.repo.repo}`
-  )
+  // const channel = (
+  //   // Use the provided `channel` input
+  //   core.getInput('channel') ||
+  //   // Default to `owner-repo`
+  //   `${context.repo.owner}-${context.repo.repo}`
+  // )
 
   // Send the data to Smee
-  const url = `https://smee.io/${channel}`
+  const url = core.getInput('webhook').trimRight('/');
   await fetch(url, {
     method: 'POST',
     body: JSON.stringify(payload),
