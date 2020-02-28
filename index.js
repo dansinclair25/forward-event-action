@@ -1,5 +1,5 @@
 const core = require('@actions/core')
-const postToSmee = require('./post-to-smee')
+const postToSmee = require('./post')
 
 async function run () {
   try {
