@@ -1,5 +1,5 @@
-name: Smee
-description: Posts webhook payloads to Smee.io to help debug GitHub Action runs
+name: forward-event-action
+description: Forwards events to a webbook with sha1 signature
 runs:
   using: node12
   main: index.js
@@ -7,8 +7,10 @@ branding:
   icon: activity
   color: red
 inputs:
-  channel:
-    description: The Smee channel to use. By default, it will use the ID of the repository.
+  secret:
+    description: The key for hashing as sha1
+  webhook:
+    description: The webhook URL i.e http://localhost:6500/webhook/github
 outputs:
   url:
     description: The full URL that this action is sending payloads to.

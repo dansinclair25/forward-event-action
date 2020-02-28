@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: joseph-montanez/forward-event-action-action
+    - uses: joseph-montanez/forward-event-action
 ```
 
 
@@ -23,7 +23,7 @@ You can specify what channel you want to send to:
 
 ```yaml
 steps:
-  - uses: joseph-montanez/forward-event-action-action
+  - uses: joseph-montanez/forward-event-action
     with:
       webhook: http://localhost:6500/webhook/github
 ```
