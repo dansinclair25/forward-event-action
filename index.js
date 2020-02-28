@@ -1,9 +1,9 @@
 const core = require('@actions/core')
-const postToSmee = require('./post')
+const post = require('./post')
 
 async function run () {
   try {
-    await postToSmee()
+    await post()
   } catch (err) {
     core.setFailed(err)
   }
