@@ -1,4 +1,4 @@
-name: forward-event-action
+name: forward-event-action-updated
 description: Forwards events to a webbook with sha1 signature
 runs:
   using: node12
