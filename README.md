@@ -1,4 +1,4 @@
-<h3 align="center">Webhook Forward Action</h3>
+<h3 align="center">Webhook Forward Action UPDATED!</h3>
 <p align="center">Forwards webhooks for internal addresses for self hosted runners<p>
 
 ## Usage
@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: joseph-montanez/forward-event-action
+    - uses: dansinclair25/forward-event-action-updated@v1.0.2
 ```
 
 
@@ -23,7 +23,7 @@ You can specify what channel you want to send to:
 
 ```yaml
 steps:
-  - uses: joseph-montanez/forward-event-action
+  - uses: dansinclair25/forward-event-action-updated@v1.0.2
     with:
       webhook: http://localhost:6500/webhook/github
 ```
