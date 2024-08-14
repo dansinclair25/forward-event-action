@@ -1,7 +1,7 @@
 name: forward-event-action-updated
 description: Forwards events to a webbook with sha1 signature
 runs:
-  using: node12
+  using: node20
   main: index.js
 branding:
   icon: activity
